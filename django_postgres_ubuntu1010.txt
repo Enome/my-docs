@@ -1,0 +1,74 @@
+#SETTING UP UBUNTU FOR DJANGO DEVELOPMENT:
+
+#Setuptools: Install tool for python modules
+
+	/	sudo apt-get install python-setuptools
+
+#Pip: Install tool for python modules
+
+	/	sudo apt-get install python-pip
+
+#VirtualEnv: Sets up isolated python environments
+
+	/	sudo pip install virtualenv
+
+#Virtualenvwrapper: Makes it easier to use virtualenv
+
+	/	sudo pip install virtualenvwrapper
+
+	*	create directory for virtualenvs:
+	/	mkdir ~/virtualenv 
+
+	* 	edit: 
+	/ 	~/.bashrc
+
+	* 	add:
+	* 	export WORKON_HOME=~/virtualenv
+	  	source /usr/local/bin/virtualenvwrapper.sh 
+
+#Create a new virtualenv
+
+	/	mkvirtualenv env_name
+
+#Use virtualenv
+
+	/	workon env_name
+
+#Install Django
+
+	/	pip install django
+	* 	or from trunk
+	/	pip install -e svn+http://code.djangoproject.com/svn/django/trunk#egg=django	
+
+#Install postgres
+
+	/	sudo apt-get install postgres
+
+#Install pgadmin3
+
+	/	sudo apt-get install pgadmin3
+
+#Change postgres user
+
+	*	Change your ubuntu bash session's user
+	/ 	sudo su postgres
+
+	*	login to template1 ( in postgres all database are cloned from template1 )
+	/	psql template1
+
+	*	Change main DATABASE user's password
+	/	template1=# ALTER USER postgres WITH PASSWORD ‘password’;
+	/	template1=# \q
+
+	* 	Change the UBUNTU user's pass also. Make sure you are /su <ubuntu-user>
+	*	-d = delete
+	/	sudo password -d postgres	
+	/	su postgres -c passwd
+
+#Install psycopg2 into our virtualenv
+
+	*	Install dependendies first into ubuntu
+	/	sudo apt-get build-dep python-psycopg2 
+	/	pip install psycopg2
+	*	Following step might not be needed not sure
+	/	easy_install -i http://downloads.egenix.com/python/index/ucs4/ egenix-mx-base
