@@ -60,9 +60,12 @@
 	/	template1=# ALTER USER postgres WITH PASSWORD ‘password’;
 	/	template1=# \q
 
-	* 	Change the UBUNTU postgres user's pass also. 
-	/ 	sudo su -
-	/ 	passwd postgres
+	* 	Change the Ubuntu postgres user's pass also. 
+        *       Change back to your ubuntu user first
+	/ 	sudo su <username>
+        *       Delete postgres' password
+        /       sudo passwd -d postgres
+        /       sudo su postgres -c passwd
 
 #Install psycopg2 into our virtualenv
 
