@@ -72,5 +72,8 @@
 	*	Install dependendies first into ubuntu
 	/	sudo apt-get build-dep python-psycopg2 
 	/	pip install psycopg2
-	*	Following step might not be needed not sure
+	*	Install egenix-mx-base into the virtualenv
 	/	easy_install -i http://downloads.egenix.com/python/index/ucs4/ egenix-mx-base
+        *       Ubuntu 11.04 / Python 2.7 
+        /       wget http://downloads.egenix.com/python/egenix-mx-base-3.2.0_dev_20100819.linux-x86_64-py2.7_ucs4.prebuilt.zip
+        /       unzip, cd, python setup.py install
