@@ -1,0 +1,45 @@
+#Install ruby and rubygems
+
+/ sudo apt-get install ruby
+/ sudo apt-get install rubygems
+
+
+#Install RVM: http://beginrescueend.com/rvm/install/
+
+- Not sure what this is
+/sudo apt-get install libreadline5-dev
+
+- Download and Install
+/ bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+
+- Append to bashrc 
+/  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+- Show notes: Install recommendations of rvm
+/ rvm notes
+
+- Install ruby 1.9.2
+/ rvm install 1.9.2
+
+###
+# Rails cheat sheet
+###
+
+- Create rails app
+/ rails new <app name>
+
+- Install project dependencies(gems)
+/ bundle install
+
+#Generators
+
+- Create controller
+/ rails generate controller People
+
+- Create model
+/ rails generate model Person
+
+#Rake: Task system
+
+- Migrate database
+/ rake db:migrate

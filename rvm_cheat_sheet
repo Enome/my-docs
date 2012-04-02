@@ -1,0 +1,14 @@
+#Current version
+ruby -v
+
+#Interactive ruby
+irb
+
+#Install 1.9.2
+rvm install 1.9.2
+
+#Use 1.9.2
+rvm use 1.9.2
+
+#Switch back to system ruby
+rvm system
